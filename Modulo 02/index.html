@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Javascript - Module 02</title>
+  </header>
+  <body>
+    <!-- Module 02 - Exercise 01 -->
+    <!--
+    <div id="app">
+      <button id="btn" class="btn">Create new square</button>
+    </div>
+    <script>
+      var btnElement = document.querySelector("#btn");
+      var containerElement = document.querySelector("#app");
+
+      btnElement.onclick = function() {
+        var divElement = document.createElement("div");
+
+        divElement.style.width = "100px";
+        divElement.style.height = "100px";
+        divElement.style.backgroundColor = "#f00";
+
+        containerElement.appendChild(divElement);
+      };
+    </script>
+    -->
+    <!--Module 02 - Exercise 02-->
+    <!--
+    <div id="app">
+      <button id="btn" class="btn">Create new square</button>
+      <div id="squares"></div>
+    </div>
+    <script>
+      var btnElement = document.querySelector("#btn");
+      var containerElement = document.querySelector("#squares");
+
+      btnElement.onclick = function() {
+        var squareElement = document.createElement("div");
+
+        squareElement.style.width = "100px";
+        squareElement.style.height = "100px";
+        squareElement.style.backgroundColor = "#000";
+        squareElement.style.float = "left";
+        squareElement.style.border = "1px solid #fff";
+
+        squareElement.onmouseover = function() {
+          var newColor = getRandomColor(); // #E943F0
+          squareElement.style.backgroundColor = newColor;
+        };
+
+        containerElement.appendChild(squareElement);
+      };
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+    -->
+    <!--Module 02 - Exercise 03-->
+    <!--
+    <div id="app"></div>
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+
+      var ulElement = document.createElement("ul");
+      ulElement.setAttribute("id", "myListNames");
+
+      for (nome of nomes) {
+        var liElement = document.createElement("li");
+        var text = document.createTextNode(nome);
+        liElement.appendChild(text);
+
+        ulElement.appendChild(liElement);
+      }
+
+      var containerElement = document.querySelector("#app");
+      containerElement.appendChild(ulElement);
+    </script>
+    -->
+    <!--Module 02 - Exercise 04-->
+    <div id="app">
+      <input type="text" name="nome" />
+      <button onClick="add()">Add name</button>
+    </div>
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+
+      var ulElement = document.createElement("ul");
+      ulElement.setAttribute("id", "myListNames");
+
+      createElement();
+
+      var containerElement = document.querySelector("#app");
+      containerElement.appendChild(ulElement);
+
+      function add() {
+        document.getElementById("myListNames").innerHTML = "";
+
+        var inputElement = document.querySelector("div#app input");
+
+        nomes.push(inputElement.value);
+
+        createElement();
+
+        inputElement.value = "";
+      }
+
+      function createElement() {
+        for (nome of nomes) {
+          var liElement = document.createElement("li");
+          var text = document.createTextNode(nome);
+          liElement.appendChild(text);
+
+          ulElement.appendChild(liElement);
+        }
+      }
+    </script>
+  </body>
+</html>
